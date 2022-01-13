@@ -27,4 +27,9 @@ contract Lofi {
   function getAllLofis() public view returns (LofiItem[] memory) {
     return lofis;
   }
+
+  // update upvote count
+  function upvote(uint256 _index) public {
+    lofis[_index].upvoteCount++;
+  }
 }
