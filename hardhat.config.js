@@ -22,7 +22,9 @@ module.exports = {
     hardhat: {},
     polygon_mumbai: {
       url: API_URL,
-      accounts: [`0x${PRIVATE_KEY}`]
+      accounts: [`0x${PRIVATE_KEY}`],
+      gas: 2100000,
+      gasPrice: 8000000000
     }
   },
   mocha: {

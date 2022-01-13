@@ -24,4 +24,14 @@ describe('Lofi', function () {
     console.log(lofiList)
     expect(lofiList[0].upvoteCount.toNumber()).to.equal(1)
   })
+
+  // test send tip to lofi submitter
+  it('should send tip to lofi submitter', async function () {
+    const lofi = await ethers.getContractFactory('Lofi')
+    const lofiInstance = await lofi.deploy()
+    await lofiInstance.newLofi('hi')
+    let lofiList = await lofiInstance.getAllLofis()
+    expect(lofiList[0].upvoteCount.toNumber()).to.equal(0)
+    await lofiInstance.tip(0)
+  })
 })

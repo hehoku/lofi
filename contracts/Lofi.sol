@@ -32,4 +32,11 @@ contract Lofi {
   function upvote(uint256 _index) public {
     lofis[_index].upvoteCount++;
   }
+
+  // send tip to submitter
+  function tip(uint256 _index) public {
+    LofiItem memory lofi = lofis[_index];
+    (bool success, ) = lofi.submitter.call{ value: 123 }('');
+    require(success, 'Failed to send tip');
+  }
 }
