@@ -7,7 +7,7 @@ contract Lofi {
   event NewLofi(address indexed from, uint256 timestamp, string message);
 
   constructor() {
-    console.log('Hello, world!');
+    console.log('halo');
   }
 
   LofiItem[] lofis;

@@ -23,8 +23,8 @@ module.exports = {
     polygon_mumbai: {
       url: API_URL,
       accounts: [`0x${PRIVATE_KEY}`],
-      gas: 2100000,
-      gasPrice: 8000000000
+      gas: 100000,
+      gasPrice: 1000
     }
   },
   mocha: {
